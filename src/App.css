@@ -1,38 +1,15 @@
-.App {
-  text-align: center;
+.intl-tel-input.allow-dropdown input, .intl-tel-input.allow-dropdown input[type=text], .intl-tel-input.allow-dropdown input[type=tel]{
+    height: 50px;
+    width: 399px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.iti-mobile .intl-tel-input .country-list {
+    margin-left: 30%;
+    margin-top: 30%;
+    width: 320px;
+    height: 430px;
+  
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.input-lightgray-border:focus {
+    border-color: lightgray !important;
+    box-shadow: 0 0 0 1px lightgray !important;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

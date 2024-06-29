@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
 
+
+import Nav from './Nav';
+import Signin from './Signin';
+import Signup from './Signup';
+import Home from './Home';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Paginate from './Paginate';
+import InfiniteScrol from './InfiniteScrol';
+import PaginationData from './PaginationData';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+     <Nav/>
+     <BrowserRouter>
+      <Routes>
+        <Route path="/">
+          <Route path="/Signin"  element={<Signin />} />
+          <Route path="/Signup" element={<Signup />} />
+          <Route path="/Home" element={<Home />} />
+          <Route path="/Paginate" element={<Paginate />} />
+          <Route path="/InfiniteScrol" element={<InfiniteScrol />} />
+          <Route path="/PaginationData" element={<PaginationData />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
+</div>
   );
 }
 
