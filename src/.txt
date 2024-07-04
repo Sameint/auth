@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import FormControlLabel from "@mui/material/FormControlLabel";
@@ -27,13 +27,12 @@ function Signup() {
   const [phoneNumber, setPhoneNumber] = useState("");
   const [dialCode, setDialCode] = useState("");
 
-  const handlePhoneNumberChange = (value, country) => {
+  const consoleNumber = (value, country, e, formattedValue) => {
+    setPhoneNumber(value);
     setDialCode(country.dialCode);
-  };
 
-  useEffect(() => {
-    console.log("Contact No-", `+${dialCode} ${phoneNumber}`);
-  }, [phoneNumber, dialCode]);
+    console.log("Contact No-", `${dialCode} ${phoneNumber}`);
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -42,6 +41,12 @@ function Signup() {
       [name]: value,
     });
   };
+
+  // const handlePhoneChange = (value, country, e, formattedValue) => {
+  //   setDialCode(`+${country.dialCode}`);
+  //   setPhoneNumber(value.replace(`+${country.dialCode}`, ''));
+  //   console.log(`Dial Code: +${country.dialCode}, Phone Number: ${value.replace(`+${country.dialCode}`, '')}`);
+  // };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -111,23 +116,24 @@ function Signup() {
             onChange={handleChange}
           />
 
-          <div className="flex flex-col justify-center gap-2 w-full items-center mt-4">
+          <div className="flex flex-col justify-center gap-2 w-full items-center mt-4 ">
             <PhoneInput
               country={"in"}
+              value={phoneNumber}
               inputStyle={{ width: "100%", height: "55px" }}
               buttonStyle={{ height: "55px" }}
               containerStyle={{ display: "inline-block" }}
               dropdownStyle={{ width: "200px" }}
               countryCodeEditable={false}
-              onChange={handlePhoneNumberChange}
+              onChange={consoleNumber}
             />
-            <input
+            {/* <input
               type="text"
               placeholder="Enter phone number"
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
-              className="ml-1 flex-1 p-4 w-full text-left border border-gray-300 rounded h-14 outline-none"
-            />
+              className="ml-1 flex-1 p-4 w-full text-left border border-gray-300 rounded h-14"
+            /> */}
           </div>
 
           <FormControlLabel

@@ -23,13 +23,14 @@ function Nav() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Auth
+            React Mix App
           </Typography>
           <Button color="inherit" href='/Signin' >Login</Button>
           <Button color="inherit" href='/Signup'>Signup</Button>
           <Button color="inherit" href='/Paginate'>Paginate</Button>
           <Button color="inherit" href='/InfiniteScrol'>Infinite-Scroll</Button>
           <Button color="inherit" href='/PaginationData'>Pagination</Button>
+          <Button color="inherit" href='/Maintenance'>Maintenance</Button>
         </Toolbar>
       </AppBar>
     </Box>

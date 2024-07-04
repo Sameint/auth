@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Paginate from './Paginate';
 import InfiniteScrol from './InfiniteScrol';
 import PaginationData from './PaginationData';
+import Maintenance from './Maintenance';
 function App() {
   return (
     <div className="App">
@@ -21,6 +22,7 @@ function App() {
           <Route path="/Paginate" element={<Paginate />} />
           <Route path="/InfiniteScrol" element={<InfiniteScrol />} />
           <Route path="/PaginationData" element={<PaginationData />} />
+          <Route path="/Maintenance" element={<Maintenance />} />
         </Route>
       </Routes>
     </BrowserRouter>
